@@ -439,6 +439,22 @@ em{ font-style: italic; color: var(--accent-strong); font-weight: 500; }
 .exp-role{ font-family: var(--font-display); font-size: 21px; font-weight: 500; }
 .exp-company{ font-family: var(--font-mono); font-size: 12.5px; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
 .exp-period{ font-family: var(--font-mono); font-size: 12.5px; color: var(--text-tertiary); white-space: nowrap; }
+.exp-period.is-current{
+  display: inline-flex; align-items: center; gap: 7px;
+  color: var(--accent-2);
+  text-shadow: 0 0 10px rgba(232,99,159,0.55);
+  animation: periodGlow 2.4s ease-in-out infinite;
+}
+.exp-period.is-current .live-dot{
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 0 4px var(--accent-2-soft);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes periodGlow{
+  0%,100%{ text-shadow: 0 0 6px rgba(232,99,159,0.35); }
+  50%{ text-shadow: 0 0 16px rgba(232,99,159,0.85); }
+}
 .exp-desc{ color: var(--text-secondary); font-size: 15.2px; max-width: 620px; }
 .exp-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 18px; }
 .exp-tags span{ font-family: var(--font-mono); font-size: 11px; padding: 5px 11px; border-radius: 100px; background: var(--accent-2-soft); color: var(--accent-2); }
@@ -608,14 +624,11 @@ a:focus-visible, button:focus-visible{
       <a href="#experiencia">Experiência</a>
       <a href="#formacao">Formação</a>
       <a href="#competencias">Competências</a>
-      <a href="#certificados">Certificados</a>
       <a href="#portfolio">Portfólio</a>
       <a href="#contato">Contato</a>
     </nav>
 
     <div class="nav-cta">
-      <!-- Editar href para o link real do currículo em PDF -->
-      <a href="#" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" style="display:none" id="navResume">Currículo</a>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -637,10 +650,8 @@ a:focus-visible, button:focus-visible{
       à criação de conteúdos e estratégias de comunicação para apoiar ações comerciais.
     </p>
     <div class="hero-actions">
-      <!-- Substituir os "#" pelos links reais -->
-      <a href="#" target="_blank" rel="noopener" class="btn btn-primary">Currículo (PDF)</a>
-      <a href="#certificados" class="btn btn-ghost">Certificados</a>
-      <a href="#portfolio" class="btn btn-ghost">Portfólio</a>
+      <a href="https://wa.me/5514998948682" target="_blank" rel="noopener" class="btn btn-primary">Fale comigo</a>
+      <a href="#portfolio" class="btn btn-ghost">Ver Portfólio</a>
     </div>
   </div>
 
@@ -657,14 +668,14 @@ a:focus-visible, button:focus-visible{
         <p class="eyebrow" style="margin-bottom:20px">Sobre mim</p>
         <p>Administração, estratégia e visão comercial são os pilares da minha atuação profissional.</p>
         <p>
-          Atuo nas áreas administrativa e comercial, com vivência prática em atendimento ao público, 
-          organização de processos e relacionamento com clientes. Na área comercial, tenho experiência 
+          Atuo nas áreas administrativa e comercial, com vivência prática em atendimento ao público,
+          organização de processos e relacionamento com clientes. Na área comercial, tenho experiência
           na prospecção e gestão de carteira de clientes, acompanhamento de negociações do início ao
-          fechamento e na criação de conteúdos e estratégias de comunicação voltadas ao fortalecimento das
-          vendas e das ações comerciais.
+          fechamento e na criação de conteúdos e estratégias de comunicação voltadas ao fortalecimento
+          das vendas e das ações comerciais.
         </p>
         <p>
-          Este portfólio reúne minhas experiências profissionais, formação, certificados e trabalhos 
+          Este portfólio reúne minhas experiências profissionais, formação, certificados e trabalhos
           desenvolvidos, apresentando de forma clara minha trajetória e minhas principais competências.
         </p>
       </div>
@@ -674,7 +685,8 @@ a:focus-visible, button:focus-visible{
         <div class="fact"><dt>Áreas</dt><dd>Administrativo, Comercial, Atendimento</dd></div>
         <div class="fact"><dt>Cidade</dt><dd>Pompeia — SP</dd></div>
         <div class="fact"><dt>Disponibilidade</dt><dd>A combinar</dd></div>
-        <div class="fact"><dt>Contato</dt><dd>naomyviclopes@gmail.com</dd></div>
+        <div class="fact"><dt>E-mail</dt><dd>naomyviclopes@gmail.com</dd></div>
+        <div class="fact"><dt>Telefone</dt><dd>(14) 99894-8682</dd></div>
       </dl>
     </div>
   </div>
@@ -694,23 +706,23 @@ a:focus-visible, button:focus-visible{
     <div class="timeline">
       <div class="timeline-thread"><div class="timeline-thread-fill" id="threadFill"></div></div>
 
-      <!-- ConsigaCred -->
+      <!-- Consiga Cred -->
       <div class="timeline-item reveal">
         <div class="timeline-node"></div>
         <div class="card exp-card">
           <div class="exp-head">
             <div>
-              <div class="exp-company">ConsigaCred</div>
-              <div class="exp-role">Assistente de Negócios</div>
+              <div class="exp-company">Consiga Cred</div>
+              <div class="exp-role">Atendente de Negócios</div>
             </div>
-            <div class="exp-period"><!-- Editar período --> Período a definir</div>
+            <div class="exp-period is-current"><span class="live-dot"></span>Jan. 2026 — Atual</div>
           </div>
           <p class="exp-desc">
-            Atuação na prospecção e gestão de carteira de clientes, com acompanhamento de negociações
-            do primeiro contato ao fechamento. Suporte à área comercial na criação de conteúdos e
-            estratégias de comunicação, alinhando atendimento consultivo a resultados de vendas.
+            Prospecção e gestão de carteira de clientes, realização de follow-ups e acompanhamento
+            de negociações. Criação de conteúdos, roteiros e estratégias de comunicação para
+            divulgação de produtos e apoio às ações comerciais.
           </p>
-          <div class="exp-tags"><span>Prospecção</span><span>Negociação</span><span>Carteira de clientes</span><span>Conteúdo</span></div>
+          <div class="exp-tags"><span>Prospecção</span><span>Follow-up</span><span>Negociação</span><span>Conteúdo</span></div>
         </div>
       </div>
 
@@ -720,37 +732,37 @@ a:focus-visible, button:focus-visible{
         <div class="card exp-card">
           <div class="exp-head">
             <div>
-              <div class="exp-company">SEE-SP</div>
+              <div class="exp-company">SEE-SP — E.E. Cultura e Liberdade</div>
               <div class="exp-role">Agente de Organização Escolar</div>
             </div>
-            <div class="exp-period"><!-- Editar período --> Período a definir</div>
+            <div class="exp-period">2025 — 2026</div>
           </div>
           <p class="exp-desc">
-            <!-- Editar/detalhar conforme necessário -->
-            Apoio administrativo e organizacional em unidade da rede estadual de ensino, com atendimento
-            a alunos, famílias e equipe pedagógica, organização de documentos e rotinas escolares.
+            Acompanhamento da rotina escolar, supervisão de alunos, atendimento ao público e apoio
+            à equipe gestora. Organização de documentos e suporte às demandas administrativas,
+            contribuindo para o bom funcionamento da instituição.
           </p>
           <div class="exp-tags"><span>Atendimento</span><span>Organização</span><span>Documentação</span></div>
         </div>
       </div>
 
-      <!-- Jazam -->
+      <!-- Jazam Alimentos -->
       <div class="timeline-item reveal">
         <div class="timeline-node"></div>
         <div class="card exp-card">
           <div class="exp-head">
             <div>
-              <div class="exp-company">Jazam</div>
-              <div class="exp-role"><!-- Editar cargo -->Atuação administrativa / comercial</div>
+              <div class="exp-company">Jazam Alimentos</div>
+              <div class="exp-role">Auxiliar de Pesquisa e Desenvolvimento</div>
             </div>
-            <div class="exp-period"><!-- Editar período --> Período a definir</div>
+            <div class="exp-period">2021 — 2022</div>
           </div>
           <p class="exp-desc">
-            <!-- Editar com os detalhes reais da experiência -->
-            Experiência complementar na área administrativa e comercial, com foco em atendimento e
-            organização de processos do dia a dia.
+            Atuação como Jovem Aprendiz no apoio às rotinas administrativas do setor de Pesquisa e
+            Desenvolvimento, realizando testes, coleta e organização de dados. Suporte em
+            degustações, registro de avaliações e comunicação com colaboradores.
           </p>
-          <div class="exp-tags"><span>Atendimento</span><span>Organização</span></div>
+          <div class="exp-tags"><span>Organização de dados</span><span>Suporte administrativo</span></div>
         </div>
       </div>
 
@@ -763,13 +775,14 @@ a:focus-visible, button:focus-visible{
               <div class="exp-company">Negócio próprio</div>
               <div class="exp-role">Empreendedora — Venda de Bolos</div>
             </div>
-            <div class="exp-period"><!-- Editar período --> Período a definir</div>
+            <div class="exp-period">2020 — 2021</div>
           </div>
           <p class="exp-desc">
-            Gestão completa de um pequeno negócio: atendimento e relacionamento com clientes, controle
-            de pedidos e prazos, precificação e organização financeira básica, com foco em fidelização.
+            Produção, divulgação e venda de bolos artesanais. Atuação em vendas online e
+            presenciais durante a pandemia, desenvolvendo autonomia, estratégias de vendas,
+            relacionamento e fidelização de clientes.
           </p>
-          <div class="exp-tags"><span>Vendas</span><span>Atendimento</span><span>Gestão financeira</span></div>
+          <div class="exp-tags"><span>Vendas</span><span>Atendimento</span><span>Fidelização</span></div>
         </div>
       </div>
 
@@ -791,6 +804,14 @@ a:focus-visible, button:focus-visible{
     <div class="edu-grid">
       <div class="card edu-card reveal">
         <div class="edu-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3 4 7l4 4M16 3l4 4-4 4M14 21 10 3"/></svg>
+        </div>
+        <div class="edu-title">Técnico em Análise e Desenvolvimento de Sistemas</div>
+        <span class="edu-status progress"><span class="dot"></span>Em andamento</span>
+      </div>
+
+      <div class="card edu-card reveal">
+        <div class="edu-icon">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
         </div>
         <div class="edu-title">Técnico em Administração</div>
@@ -803,14 +824,6 @@ a:focus-visible, button:focus-visible{
         </div>
         <div class="edu-title">Técnico em Assistente Administrativo</div>
         <span class="edu-status"><span class="dot"></span>Concluído</span>
-      </div>
-
-      <div class="card edu-card reveal">
-        <div class="edu-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 3 4 7l4 4M16 3l4 4-4 4M14 21 10 3"/></svg>
-        </div>
-        <div class="edu-title">Técnico em Análise e Desenvolvimento de Sistemas</div>
-        <span class="edu-status progress"><span class="dot"></span>Em andamento</span>
       </div>
     </div>
   </div>
@@ -828,103 +841,27 @@ a:focus-visible, button:focus-visible{
     </div>
 
     <div class="skills-wrap reveal">
+      <span class="badge">Atendimento ao Cliente</span>
       <span class="badge">Atendimento ao Público</span>
-      <span class="badge">Comunicação</span>
-      <span class="badge">Relacionamento com Clientes</span>
+      <span class="badge">Rotinas Administrativas</span>
+      <span class="badge">Suporte Administrativo</span>
+      <span class="badge">Organização de Documentos</span>
+      <span class="badge">Prospecção de Clientes</span>
+      <span class="badge">Gestão de Carteira</span>
+      <span class="badge">Follow-up Comercial</span>
       <span class="badge">Negociação</span>
-      <span class="badge">Organização</span>
-      <span class="badge">Proatividade</span>
-      <span class="badge">Informática</span>
+      <span class="badge">Análise de Indicadores</span>
+      <span class="badge">Comunicação</span>
       <span class="badge">Pacote Office</span>
+      <span class="badge">Excel</span>
       <span class="badge">Ferramentas Digitais</span>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-     CERTIFICADOS
-========================================================= -->
-<section id="certificados">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow">Comprovações</p>
-      <h2 class="section-title">Certificados</h2>
-      <p class="section-lede">Cards prontos para receber os links dos certificados em PDF.</p>
-    </div>
-
-    <div class="cert-grid">
-      <!-- Cada card: editar título e o href do botão para o PDF correspondente -->
-      <div class="card cert-card reveal">
-        <div class="cert-top">
-          <div class="cert-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg></div>
-          <span class="cert-status">PDF</span>
-        </div>
-        <div>
-          <div class="cert-title">Certificado — Título a definir</div>
-          <div class="cert-sub">Instituição / carga horária</div>
-        </div>
-        <a href="#" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Ver certificado</a>
-      </div>
-
-      <div class="card cert-card reveal">
-        <div class="cert-top">
-          <div class="cert-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg></div>
-          <span class="cert-status">PDF</span>
-        </div>
-        <div>
-          <div class="cert-title">Certificado — Título a definir</div>
-          <div class="cert-sub">Instituição / carga horária</div>
-        </div>
-        <a href="#" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Ver certificado</a>
-      </div>
-
-      <div class="card cert-card reveal">
-        <div class="cert-top">
-          <div class="cert-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg></div>
-          <span class="cert-status">PDF</span>
-        </div>
-        <div>
-          <div class="cert-title">Certificado — Título a definir</div>
-          <div class="cert-sub">Instituição / carga horária</div>
-        </div>
-        <a href="#" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Ver certificado</a>
-      </div>
-
-      <div class="card cert-card reveal">
-        <div class="cert-top">
-          <div class="cert-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg></div>
-          <span class="cert-status">PDF</span>
-        </div>
-        <div>
-          <div class="cert-title">Certificado — Título a definir</div>
-          <div class="cert-sub">Instituição / carga horária</div>
-        </div>
-        <a href="#" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Ver certificado</a>
-      </div>
-
-      <div class="card cert-card reveal">
-        <div class="cert-top">
-          <div class="cert-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg></div>
-          <span class="cert-status">PDF</span>
-        </div>
-        <div>
-          <div class="cert-title">Certificado — Título a definir</div>
-          <div class="cert-sub">Instituição / carga horária</div>
-        </div>
-        <a href="#" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Ver certificado</a>
-      </div>
-
-      <div class="card cert-card reveal">
-        <div class="cert-top">
-          <div class="cert-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/></svg></div>
-          <span class="cert-status">PDF</span>
-        </div>
-        <div>
-          <div class="cert-title">Certificado — Título a definir</div>
-          <div class="cert-sub">Instituição / carga horária</div>
-        </div>
-        <a href="#" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Ver certificado</a>
-      </div>
+      <span class="badge">Informática</span>
+      <span class="badge">Produção de Conteúdo</span>
+      <span class="badge">Edição de Vídeos</span>
+      <span class="badge">Adaptabilidade</span>
+      <span class="badge">Aprendizado Contínuo</span>
+      <span class="badge">Resolução de Problemas</span>
+      <span class="badge">Trabalho em Equipe</span>
     </div>
   </div>
 </section>
@@ -941,35 +878,38 @@ a:focus-visible, button:focus-visible{
     </div>
 
     <div class="portfolio-grid">
-     <!-- Vídeos ConsigaCred -->
-<div class="card pf-card reveal">
-  <div class="pf-cover">
-    <div class="play">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg>
-    </div>
-  </div>
-  <div class="pf-body">
-    <span class="pf-cat">ConsigaCred</span>
-    <h3 class="pf-title">Vídeos produzidos para a Consiga Cred</h3>
-    <p class="pf-desc">Conteúdos em vídeo produzidos para apoiar ações comerciais e comunicação da ConsigaCred.</p>
-    <div class="pf-foot"><a href="https://drive.google.com/drive/folders/1zDIBpHVIY3CvugAOk-hCha_348bkzpiX?usp=drive_link" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Assistir</a></div>
-  </div>
-</div>
+      <!-- Vídeos ConsigaCred -->
+      <div class="card pf-card reveal">
+        <div class="pf-cover">
+          <div class="play">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg>
+          </div>
+        </div>
+        <div class="pf-body">
+          <span class="pf-cat">ConsigaCred</span>
+          <h3 class="pf-title">Vídeos produzidos para a Consiga Cred</h3>
+          <p class="pf-desc">Conteúdos em vídeo produzidos para apoiar ações comerciais e comunicação da ConsigaCred.</p>
+          <div class="pf-foot"><a href="https://drive.google.com/drive/folders/1zDIBpHVIY3CvugAOk-hCha_348bkzpiX?usp=drive_link" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Assistir</a></div>
+        </div>
+      </div>
 
-<!-- Conteúdos ETEC -->
-<div class="card pf-card reveal">
-  <div class="pf-cover">
-    <div class="play">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg>
+      <!-- Conteúdos ETEC -->
+      <div class="card pf-card reveal">
+        <div class="pf-cover">
+          <div class="play">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg>
+          </div>
+        </div>
+        <div class="pf-body">
+          <span class="pf-cat">ETEC</span>
+          <h3 class="pf-title">Vídeos produzidos para a ETEC</h3>
+          <p class="pf-desc">Conteúdos em vídeo produzidos durante a formação técnica, com foco em comunicação e divulgação do curso.</p>
+          <div class="pf-foot"><a href="https://drive.google.com/drive/folders/1KEN4KZv8QttfqkBr63Fh-HJo_AFo5DFr?usp=drive_link" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Assistir</a></div>
+        </div>
+      </div>
+
     </div>
   </div>
-  <div class="pf-body">
-    <span class="pf-cat">ETEC</span>
-    <h3 class="pf-title">Vídeos produzidos para a ETEC</h3>
-    <p class="pf-desc">Conteúdos em vídeo produzidos durante a formação técnica, com foco em comunicação e divulgação do curso.</p>
-    <div class="pf-foot"><a href="https://drive.google.com/drive/folders/1KEN4KZv8QttfqkBr63Fh-HJo_AFo5DFr?usp=drive_link" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Assistir</a></div>
-  </div>
-</div>
 </section>
 
 <!-- =========================================================
